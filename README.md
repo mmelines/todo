@@ -45,3 +45,12 @@ At this point you can run the application:
     - set development env `$ export FLASK_ENVIORNMENT=development`
 3. start flask server: `$ flask run`
 4. check the server in your browser at the address http://localhost:5000
+
+### 2.3.9b
+- add `__main__` block to end of code and specify an alternate port if you want:
+        ```
+        if __name__=='__main__':
+            app.run(port=5001)
+        ```
+- now, you can also run the app with `python3 app.py`
+- check this in your browser at the address http://localhost:5001 (or whatever port you chose)
