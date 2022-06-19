@@ -54,3 +54,17 @@ At this point you can run the application:
         ```
 - now, you can also run the app with `python3 app.py`
 - check this in your browser at the address http://localhost:5001 (or whatever port you chose)
+
+### 2.3.10
+- import flask SQLAlchemy library: `from flask_sqlalchemy import SQLAlchemy`
+- link to flash application to begin using SQLAlchemy: `app = Flask(__name__)`
+- connect to postgres database from our flask application: `app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://<username>@<host>:<port>/<dbname>`
+- configuration variable URI
+    - dialect: database dialect
+    - username: could be `postgres` or name of the server
+    - password: optional
+    - host: address, possibly `localhost`
+    - port: connection of port used on host
+    - database name: name of your database
+- ! configure DBAPI specification (optional): add plus sign and name after dialect, ex. `postgres+psycopg2://<username>@<host>:<port>/<dbname>`
+- `db = SQLAlchemy(app)`: set db equal to sqlalchemy and pass in flask application; links instance of db we can interact with to our flask application
