@@ -86,3 +86,6 @@ At this point you can run the application:
 1. store query response as variable: `person = Person.query.first()`
 2. change return statement in `index()` block to `return 'Hello' + person`
 (also added `app.config[SQLALCHEMY_TRACK_MODIFICATIONS]=False` because it was v annoying and realized previously mentioned `from flask_sqlalchemy import SQLAlchemy` was ommitted in previously committed code)
+
+## 2.3.14
+- add `__repr__(self)` to `Person` model: `f'Person ({self.id}): {self.name}'`
