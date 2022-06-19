@@ -76,3 +76,7 @@ At this point you can run the application:
 - set table name manually: `__tablename__ = '<tablename>'`
     - in this case `Person` SQLAlchemy model will be mapped to `person`
     - default tablename is the name of the table for you and set it equal to the lowercase version of your class
+
+### 2.3.12
+- use `db.create_all()` to actually create database model
+- add it after your defined models
