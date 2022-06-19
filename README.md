@@ -68,3 +68,11 @@ At this point you can run the application:
     - database name: name of your database
 - ! configure DBAPI specification (optional): add plus sign and name after dialect, ex. `postgres+psycopg2://<username>@<host>:<port>/<dbname>`
 - `db = SQLAlchemy(app)`: set db equal to sqlalchemy and pass in flask application; links instance of db we can interact with to our flask application
+
+### 2.3.11
+- `class Person(db.Model)`: create model by declaring class which inherits sqlalchemy class `Model` and define columns as variables
+    - define primary key attribute for class: `id = db.Column(db.Integer, primary_key=True)`
+    - define a string attribute named `name`: `name = db.Column(db.String(), nullable=False)`
+- set table name manually: `__tablename__ = '<tablename>'`
+    - in this case `Person` SQLAlchemy model will be mapped to `person`
+    - default tablename is the name of the table for you and set it equal to the lowercase version of your class
