@@ -80,3 +80,9 @@ At this point you can run the application:
 ### 2.3.12
 - use `db.create_all()` to actually create database model
 - add it after your defined models
+
+## 2.3.13
+- select first record: `<Model_name>.query.first()`
+1. store query response as variable: `person = Person.query.first()`
+2. change return statement in `index()` block to `return 'Hello' + person`
+(also added `app.config[SQLALCHEMY_TRACK_MODIFICATIONS]=False` because it was v annoying and realized previously mentioned `from flask_sqlalchemy import SQLAlchemy` was ommitted in previously committed code)
