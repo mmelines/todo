@@ -12,7 +12,9 @@ This application requires:
 - Postgresql
 
 ## Development Process
-import note on convention: terminal commands are appended with `$ ` to differentiate them from other code in these notes, but it is never neccessary to enter `$ `; start the commands in your terminal after the first two chars of the provided command. Similarly, commands intended to be run inside the python interpreter are prepended with `>>> `
+- import note on convention: terminal commands are appended with `$ ` to differentiate them from other code in these notes, but it is never neccessary to enter `$ `; start the commands in your terminal after the first two chars of the provided command. 
+- similarly, commands intended to be run inside the python interpreter are prepended with `>>> `
+- it is assumed that all cli commands and actions are executed from the root folder since this project has an extremely basic structure
 
 ### 2.3.9
 A Basic Hello World Application
