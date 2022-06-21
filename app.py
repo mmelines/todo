@@ -29,5 +29,9 @@ def index():
     data = Todo.query.all()
     return render_template('pages/index.html', data=data)
 
+@app.route('/create')
+def create():
+    return "hit create endpoint"
+
 if __name__=='__main__':
     app.run(port=5001)
