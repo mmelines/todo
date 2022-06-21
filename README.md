@@ -131,3 +131,4 @@ class Todo(db.Model)
         data = Todo.query.all()
         return render_template('index.html', data=Todo.query.all())
 ``` 
+note: add `render_template` to imports by modifying Flask import line to `from flask import Flask, render_template`
