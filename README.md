@@ -113,3 +113,21 @@ At this point you can run the application:
         <br>{% endfor %}
     </ul>
     ...
+
+## 2.5.3
+1. Add `Todo` class to database:
+```
+class Todo(db.Model)
+    id = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.String(), nullable=False)
+
+    def __repr__(self):
+        return f'#{self.id}: {self.description}'
+```
+2. Modify `render_template()` in `index()` route to return data from the database:
+```
+    ...
+    def index():
+        data = Todo.query.all()
+        return render_template('index.html', data=Todo.query.all())
+``` 

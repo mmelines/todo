@@ -14,12 +14,20 @@ class Person(db.Model):
     def __repr__(self):
         return f'Person ({self.id}): {self.name}'
 
+class Todo(db.Model):
+    __tablename__ = 'todo'
+    id = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.String(), nullable=False)
+
+    def __repr__(self):
+        return f'#{self.id}. {self.description}'
+
 db.create_all()
 
 @app.route('/')
 def index():
-    person = Person.query.first()
-    return render_template('pages/index.html')
+    data = Todo.query.all()
+    return render_template('pages/index.html', data=data)
 
 if __name__=='__main__':
     app.run(port=5001)
