@@ -91,3 +91,25 @@ At this point you can run the application:
 
 ## 2.3.14
 - add `__repr__(self)` to `Person` model: `f'Person ({self.id}): {self.name}'`
+
+## 2.5.2
+1. Create `templates` folder @ .`templates/pages` and store `index.html` there
+2. Create `index()` route to return HTML template file
+    ```
+    from flask import Flask
+    app = Flask(__name__)
+
+    @app.route('/')
+    def index():
+        return render_template('index.html')
+    ```
+3. Create Jinja loop to display variables passed through the template
+    ```
+    (some msg indicating success)
+    ...
+    <ul>
+        <br>{% for d in data %}
+        <br><li>{{d.description}}</li>
+        <br>{% endfor %}
+    </ul>
+    ...

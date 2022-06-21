@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -19,7 +19,7 @@ db.create_all()
 @app.route('/')
 def index():
     person = Person.query.first()
-    return 'Hello ' + person.name
+    return render_template('pages/index.html')
 
 if __name__=='__main__':
     app.run(port=5001)
