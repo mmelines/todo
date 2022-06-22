@@ -35,11 +35,12 @@
    background-color: black;
    border: 2px solid black;
    margin: 4px;
-   padding: 5px;
-   border-radius: 12%;
+   padding: 2.5% 0 0 0;
    color: white;
    font-size: 1.2em;
-   width: 5em;
+   text-align: center;
+   width: 7em;
+   height: 2em;
 }
 
 .nav-link > a {

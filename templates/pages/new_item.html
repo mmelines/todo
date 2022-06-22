@@ -1,0 +1,14 @@
+{% extends 'layouts/main.html' %}
+
+{% block content %}
+<div id="content_wrap">
+    <div id="form-wrap">
+        <div id="description-row">
+            <form id="create-todo" action="/todos/create" method="POST">
+                <textarea id="description" name="description" rows="4" cols="50">Create a new to-do item.</textarea>
+                <input type="submit" value="create" />
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

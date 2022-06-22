@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -26,12 +26,24 @@ db.create_all()
 
 @app.route('/')
 def index():
-    data = Todo.query.all()
+    data = Todo.query.order_by(Todo.id.desc()).all()
     return render_template('pages/index.html', data=data)
 
-@app.route('/create')
-def create():
-    return "hit create endpoint"
+@app.route('/todos/create', methods=["GET"])
+def new_todo():
+    return render_template('pages/new_item.html')
+
+@app.route('/todos/create', methods=["POST"])
+def submit_new_todo():
+    description = request.form.get('description')
+    todo =  Todo(description=description)
+    try:
+        db.session.add(todo)
+        db.session.commit()
+    except:
+        db.session.rollback()
+    finally:
+        return redirect(url_for('index'))
 
 if __name__=='__main__':
     app.run(port=5001)
