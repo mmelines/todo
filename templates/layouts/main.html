@@ -1,0 +1,18 @@
+<head>
+    <link type="text/css" rel="stylesheet" href="/static/css/navbar-styles.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/form-styles.css">
+</head>
+<body>
+    <div id="nav">
+        <div id="nav-header">
+            <h1><a href="{{url_for('index')}}">To Do Application</a></h1>
+        </div>
+        <div id="nav-links">
+            <ul>
+                <li class="nav-link"><a href="{{url_for('new_todo')}}">New Todo</a></li>
+            </ul>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
